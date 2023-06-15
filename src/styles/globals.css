@@ -2,26 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .pseudo-spin-content {
+    @apply content-[''] rounded-full outline-dashed outline-offset-[-11px] outline-2 outline-sea hover:animate-[spin_10s] absolute h-full w-full
+  }
+
+  .inner-border {
+    background: linear-gradient(to top, var(--color-text-secondary) 15%, transparent 15% 100%);
+  }
+}
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --color-text-primary: #000000;
+  --color-text-secondary: #146C94;
+  --color-bg-primary: #F6F1F1;
+  --color-bg-secondary: #19A7CE;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --color-text-primary: #000000;
+    --color-text-secondary: #146C94;
+    --color-bg-primary: #F6F1F1;
+    --color-bg-secondary: #19A7CE;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-size: 18px;
+  color: var(--foreground-rgb);
+  background: var(--background-rgb);
 }

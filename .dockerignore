@@ -1,0 +1,9 @@
+**/node_modules
+
+.git
+.DS_Store
+.env
+dist
+*.log
+npm-debug.log
+yarn-error.log
